@@ -1,0 +1,67 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "base.apk"
+  ],
+  "treeExpansions": [
+    [
+      "Source code",
+      "base.apk"
+    ],
+    [
+      "com",
+      "Source code",
+      "base.apk"
+    ],
+    [
+      "qcymall.qcylibrary",
+      "com",
+      "Source code",
+      "base.apk"
+    ],
+    [
+      "p016throw",
+      "qcymall.qcylibrary",
+      "com",
+      "Source code",
+      "base.apk"
+    ],
+    [
+      "com.qcymall.qcylibrary.throw.try",
+      "p016throw",
+      "qcymall.qcylibrary",
+      "com",
+      "Source code",
+      "base.apk"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": [
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.inuker_qcy.bluetooth.library.do",
+          "shortId": "do(Ljava/lang/String;Ljava/util/UUID;Ljava/util/UUID;Lcom/inuker_qcy/bluetooth/library/instanceof/break/try;)V"
+        },
+        "newName": "read_char"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.throw.try",
+          "shortId": "do(Lcom/qcymall/qcylibrary/throw/new;)V"
+        },
+        "newName": "set"
+      }
+    ]
+  },
+  "openTabs": [],
+  "cacheDir": "/home/user/.cache/jadx/projects/base-adeb59a7bef94eb029c228f9c8da6490",
+  "enableLiveReload": false,
+  "searchHistory": [
+    "f507switch",
+    "00001002-0000-1000-8000-00805f9b34fb"
+  ],
+  "pluginOptions": {}
+}

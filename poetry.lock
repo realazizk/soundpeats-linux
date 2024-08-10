@@ -97,6 +97,17 @@ files = [
 ]
 
 [[package]]
+name = "dbus-next"
+version = "0.2.3"
+description = "A zero-dependency DBus library for Python with asyncio support"
+optional = false
+python-versions = ">=3.6.0"
+files = [
+    {file = "dbus_next-0.2.3-py3-none-any.whl", hash = "sha256:58948f9aff9db08316734c0be2a120f6dc502124d9642f55e90ac82ffb16a18b"},
+    {file = "dbus_next-0.2.3.tar.gz", hash = "sha256:f4eae26909332ada528c0a3549dda8d4f088f9b365153952a408e28023a626a5"},
+]
+
+[[package]]
 name = "gattlib"
 version = "0.20210616"
 description = "Library to access Bluetooth LE devices"
@@ -414,4 +425,4 @@ all = ["winrt-Windows.Foundation.Collections[all] (==2.1.0)", "winrt-Windows.Fou
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "c9dbdb6b5750fee03a0dd3c857cb1bc50f5e4fcd0d7370cc1d129db637a11cfe"
+content-hash = "682aeb4a7b8e45de15ea5c77285650a418e1ddfbd760b88eb3b3422f3294b3e0"

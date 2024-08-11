@@ -205,31 +205,34 @@ public static Ccase getDataBean(int i, byte[] bArr) {
     }
 }
 
-   public static ArrayList<Ccase> m7503do(byte[] bArr) {
-        byte[] bArr2;
-        ArrayList<Ccase> arrayList = new ArrayList<>();
-        if (bArr != 0 && bArr.length >= 4) {
-            int i = 2;
-            if (bArr.length == bArr[1] + 2) {
-                while (i < bArr.length) {
-                    int i2 = i + 1;
-                    int i3 = bArr[i];
-                    i += 2;
-                    int i4 = bArr[i2];
-                    if (i4 > 0) {
-                        bArr2 = new byte[i4];
-                        System.arraycopy(bArr, i, bArr2, 0, i4);
-                        i += i4;
-                    } else {
-                        bArr2 = null;
-                    }
-                    Ccase dataBean = Ccase.getDataBean(i3, bArr2);
-                    if (dataBean != null && !arrayList.contains(dataBean)) {
-                        arrayList.add(dataBean);
-                    }
+public static ArrayList<Ccase> m7503do(byte[] bArr) {
+    byte[] bArr2;
+    ArrayList<Ccase> arrayList = new ArrayList<>();
+    if (bArr != 0 && bArr.length >= 4) {
+        int i = 2;
+        if (bArr.length == bArr[1] + 2) {
+            while (i < bArr.length) {
+                int i2 = i + 1;
+                int i3 = bArr[i];
+                i += 2;
+                int i4 = bArr[i2];
+                if (i4 > 0) {
+                    bArr2 = new byte[i4];
+                    System.arraycopy(bArr, i, bArr2, 0, i4);
+                    i += i4;
+                } else {
+                    bArr2 = null;
+                }
+                Ccase dataBean = Ccase.getDataBean(i3, bArr2);
+                if (dataBean != null && !arrayList.contains(dataBean)) {
+                    arrayList.add(dataBean);
                 }
             }
         }
-        return arrayList;
     }
+    return arrayList;
+}
 ```
+
+- Device info
+    - For the capsule3 pro GetDeviceInfoCapsule3Pro

@@ -91,6 +91,20 @@ async def battery_level(client: BleakClient):
     }
 
 
+async def get_firmware_version(client: BleakClient):
+    uuid = "00000007-0000-1000-8000-00805f9b34fb"
+    service = await get_service(client)
+    char = service.get_characteristic(uuid)
+    if not char:
+        logger.error("Characteristic not found")
+        return
+
+    out = await client.read_gatt_char(char)
+    logger.info(f"Received: {out}, {binascii.hexlify(out)}")
+
+    return out.decode()
+
+
 async def read_earbud_setting(client: BleakClient):
     uuid = "00001002-0000-1000-8000-00805f9b34fb"
     service = await get_service(client)
@@ -182,20 +196,21 @@ b"\xff\x14\x06\x01\x01\x08\x03FF\x7f\t\x01\x02\x0c\x01\xa5\x10\x01\x00\x16\x012"
 async def main(address):
     logger.info(f"Connecting to device: {address}")
 
+    """
     logger.info(
         parse_earbud_setting(
             b"\xff\x14\x06\x01\x01\x08\x03FF\x7f\t\x01\x02\x0c\x01\xa5\x10\x01\x00\x16\x012"
         )
     )
     """
+
     async with BleakClient(address) as client:
         if client.is_connected:
             logger.info(f"Connected: {client}")
 
         # await explore_services(client)
         # logger.info(await battery_level(client))
-        logger.info(await read_earbud_setting(client))
-    """
+        # logger.info(await get_firmware_version(client))
 
 
 asyncio.run(main(DEVICE_ADDRESS))

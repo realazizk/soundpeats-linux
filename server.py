@@ -121,16 +121,36 @@ class BLEService(ServiceInterface):
     def __init__(self, bus_name):
         super().__init__(bus_name)
         self.client = None
+        self.reconnect_task = None
+        self.device_address = None
 
     async def connect(self, address):
-        logger.info(f"Connecting to device: {address}")
-        self.client = BleakClient(address)
-        await self.client.connect()
-        if self.client.is_connected:
-            logger.info(f"Connected: {self.client}")
+        self.device_address = address
+        while True:
+            try:
+                logger.info(f"Connecting to device: {address}")
+                self.client = BleakClient(address)
+                await self.client.connect()
+                if self.client.is_connected:
+                    logger.info(f"Connected: {self.client}")
+                    self.client.set_disconnected_callback(self.on_disconnect)
+                    break
+            except Exception as e:
+                logger.error(f"Connection failed: {e}")
+                await asyncio.sleep(5)
+
+    def on_disconnect(self, client):
+        logger.warning("Disconnected from device, attempting to reconnect...")
+        if self.reconnect_task is None or self.reconnect_task.done():
+            loop = asyncio.get_event_loop()
+            self.reconnect_task = asyncio.run_coroutine_threadsafe(
+                self.connect(self.device_address), loop
+            )
 
     async def disconnect(self):
-        q
+        if self.client:
+            await self.client.disconnect()
+            logger.info("Disconnected")
 
     async def explore_services(self):
         if not self.client:

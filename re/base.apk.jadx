@@ -25,14 +25,6 @@
       "com",
       "Source code",
       "base.apk"
-    ],
-    [
-      "com.qcymall.qcylibrary.throw.try",
-      "p016throw",
-      "qcymall.qcylibrary",
-      "com",
-      "Source code",
-      "base.apk"
     ]
   ],
   "codeData": {
@@ -49,6 +41,26 @@
       {
         "nodeRef": {
           "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "if(Ljava/lang/String;[B)V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 262144
+        },
+        "newName": "mac"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "if(Ljava/lang/String;[B)V"
+        },
+        "newName": "parse_earbud_setting"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
           "declClass": "com.qcymall.qcylibrary.throw.try",
           "shortId": "do(Lcom/qcymall/qcylibrary/throw/new;)V"
         },
@@ -60,8 +72,14 @@
   "cacheDir": "/home/user/.cache/jadx/projects/base-adeb59a7bef94eb029c228f9c8da6490",
   "enableLiveReload": false,
   "searchHistory": [
+    "f501extends",
+    "00000008-0000-1000-8000-00805f9b34fb",
+    "m7534if",
+    "00001002-0000-1000-8000-00805f9b34fb",
     "f507switch",
-    "00001002-0000-1000-8000-00805f9b34fb"
+    "readEarbudSetting",
+    "passthrou",
+    "capsule"
   ],
   "pluginOptions": {}
 }

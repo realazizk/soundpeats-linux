@@ -1,0 +1,12 @@
+[Unit]  
+Description=BLE Service for Soundepats Earbuds  
+After=network.target  
+  
+[Service]  
+ExecStart=/usr/local/bin/server.bin
+Restart=on-failure 
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus  
+
+  
+[Install]  
+WantedBy=default.target  

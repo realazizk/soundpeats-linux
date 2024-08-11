@@ -11,6 +11,9 @@ bleak = "^0.22.2"
 gattlib = "^0.20210616"
 dbus-next = "^0.2.3"
 
+[tool.poetry.group.dev.dependencies]
+nuitka = "^2.4.5"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

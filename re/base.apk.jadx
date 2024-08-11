@@ -25,11 +25,35 @@
       "com",
       "Source code",
       "base.apk"
+    ],
+    [
+      "com.qcymall.qcylibrary.throw.if",
+      "p016throw",
+      "qcymall.qcylibrary",
+      "com",
+      "Source code",
+      "base.apk"
     ]
   ],
   "codeData": {
     "comments": [],
     "renames": [
+      {
+        "nodeRef": {
+          "refType": "FIELD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "static:Ljava/lang/String;"
+        },
+        "newName": "set_earbud_setting_characteristic"
+      },
+      {
+        "nodeRef": {
+          "refType": "FIELD",
+          "declClass": "com.qcymall.qcylibrary.throw.if",
+          "shortId": "case:[B"
+        },
+        "newName": "buffer_to_write"
+      },
       {
         "nodeRef": {
           "refType": "METHOD",
@@ -61,21 +85,181 @@
       {
         "nodeRef": {
           "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "sendBleCmdData(Ljava/lang/String;Ljava/lang/String;[B)Z"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 196608
+        },
+        "newName": "mac"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "sendBleCmdData(Ljava/lang/String;Ljava/lang/String;[B)Z"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 262144
+        },
+        "newName": "characteristic"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "sendBleCmdData(Ljava/lang/String;Ljava/lang/String;[B)Z"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 327680
+        },
+        "newName": "buffer"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "setNoiseMode(Ljava/lang/String;I)V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 131072
+        },
+        "newName": "mac"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.QCYHeadsetClient",
+          "shortId": "setNoiseMode(Ljava/lang/String;I)V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 196608
+        },
+        "newName": "noise_mode"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.dataBean.try",
+          "shortId": "do([[B)[B"
+        },
+        "newName": "pack_data_to_send"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.qcymall.qcylibrary.throw.if",
+          "shortId": "\u003cinit\u003e(Ljava/lang/String;Lcom/inuker_qcy/bluetooth/library/do;Ljava/lang/String;[B)V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 262144
+        },
+        "newName": "buffer"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
           "declClass": "com.qcymall.qcylibrary.throw.try",
           "shortId": "do(Lcom/qcymall/qcylibrary/throw/new;)V"
         },
         "newName": "set"
+      },
+      {
+        "nodeRef": {
+          "refType": "METHOD",
+          "declClass": "com.smc.tool_base.util.model.deviceInfo.GetDeviceInfoCapsule3Pro",
+          "shortId": "setDeviceANCMode(I)V"
+        },
+        "codeRef": {
+          "attachType": "VAR",
+          "index": 1
+        },
+        "newName": "noise_mode"
       }
     ]
   },
-  "openTabs": [],
+  "openTabs": [
+    {
+      "type": "class",
+      "tabPath": "com.qcymall.qcylibrary.QCYHeadsetClient",
+      "subPath": "java",
+      "caret": 23016,
+      "view": {
+        "x": 0,
+        "y": 9228
+      },
+      "active": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.smc.tool_base.util.model.deviceInfo.GetDeviceInfoCapsule3Pro",
+      "subPath": "java",
+      "caret": 7631,
+      "view": {
+        "x": 0,
+        "y": 1797
+      },
+      "active": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.qcymall.qcylibrary.dataBean.catch",
+      "subPath": "java",
+      "caret": 921,
+      "view": {
+        "x": 0,
+        "y": 171
+      },
+      "active": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.inuker_qcy.bluetooth.library.do",
+      "subPath": "java",
+      "caret": 1161,
+      "view": {
+        "x": 0,
+        "y": 3216
+      },
+      "active": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.qcymall.qcylibrary.throw.if",
+      "subPath": "java",
+      "caret": 1091,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.qcymall.qcylibrary.dataBean.try",
+      "subPath": "java",
+      "caret": 271,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": true
+    }
+  ],
   "cacheDir": "/home/user/.cache/jadx/projects/base-adeb59a7bef94eb029c228f9c8da6490",
   "enableLiveReload": false,
   "searchHistory": [
+    "00001002-0000-1000-8000-00805f9b34fb",
+    "Capsule3pro",
     "f501extends",
     "00000008-0000-1000-8000-00805f9b34fb",
     "m7534if",
-    "00001002-0000-1000-8000-00805f9b34fb",
     "f507switch",
     "readEarbudSetting",
     "passthrou",

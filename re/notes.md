@@ -236,3 +236,8 @@ public static ArrayList<Ccase> m7503do(byte[] bArr) {
 
 - Device info
     - For the capsule3 pro GetDeviceInfoCapsule3Pro
+
+- Noise modes for capsule 3 pro
+    - 0x02: normal mode
+    - 0x63: anc mode
+    - 0xa5: passthrough mode

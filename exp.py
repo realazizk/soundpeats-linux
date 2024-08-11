@@ -36,12 +36,19 @@ class CommandsEnum(enum.IntEnum):
     VOICENAME = 25
 
 
+class NoiseMode(enum.IntEnum):
+    NORMAL = 0x02
+    ANC = 0x63
+    PASSTHROUGH = 0xA5
+
+
 async def get_service(client: BleakClient):
     global SERVICE
 
     if SERVICE:
         return SERVICE
     service_uuid = "0000a001-0000-1000-8000-00805f9b34fb"
+    # service_uuid = "00007033-0000-1000-8000-00805f9b34fb"
     (SERVICE,) = (s for s in client.services if s.uuid == service_uuid)
     return SERVICE
 
@@ -163,6 +170,39 @@ def parse_earbud_setting(data):
     return process_byte_array(data)
 
 
+def pack_data_to_send(*bArr):
+    # Initialize a bytearray of size 256
+    bArr2 = bytearray(256)
+    i = 2
+
+    # Concatenate the input byte arrays into bArr2
+    for bArr3 in bArr:
+        bArr2[i : i + len(bArr3)] = bArr3
+        i += len(bArr3)
+
+    # Create the final byte array of the correct size
+    bArr4 = bytearray(i)
+    bArr4[0] = 0xFF
+    bArr4[1] = i - 2
+    bArr4[2:] = bArr2[2:i]
+
+    return bytes(bArr4)
+
+
+async def set_noise_mode(client: BleakClient, mode: NoiseMode):
+    uuid = "00001001-0000-1000-8000-00805f9b34fb"
+    service = await get_service(client)
+    char = service.get_characteristic(uuid)
+    if not char:
+        logger.error("Characteristic not found")
+        return
+
+    await client.write_gatt_char(
+        char,
+        pack_data_to_send(bytes([12, 1, mode.value])),
+    )
+
+
 """
 normal mode
 b"\xff\x14\x06\x01\x01\x08\x03??\x7f\t\x01\x02\x0c\x01\x02\x10\x01\x00\x16\x012"
@@ -203,14 +243,16 @@ async def main(address):
         )
     )
     """
-
+    # logger.info(pack_data_to_send(bytes([12, 1, NoiseMode.ANC.value])))
     async with BleakClient(address) as client:
         if client.is_connected:
             logger.info(f"Connected: {client}")
 
         # await explore_services(client)
-        # logger.info(await battery_level(client))
-        # logger.info(await get_firmware_version(client))
+        logger.info(await battery_level(client))
+        logger.info(await get_firmware_version(client))
+
+        await set_noise_mode(client, NoiseMode.ANC)
 
 
 asyncio.run(main(DEVICE_ADDRESS))

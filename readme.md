@@ -2,6 +2,10 @@
 
 This is a BLE program to control my soundpeats capsule3 pro. Like get Battery, change modes between normal, anc and passthrough because i'm too lazy to raise my hand to my ears I'd rather do it from my keyboard.
 
+I also have battery level on my zsh (use my codes in soundpeats.zsh)
+
+![battery](./img/screenshot_zsh.png)
+
 ### Supported devices
 
 I only own a capsule3 pro, should support some QCY models, they have similar firmware.
